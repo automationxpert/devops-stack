@@ -21,7 +21,7 @@ module "sks" {
 }
 
 module "argocd_bootstrap" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git//bootstrap?ref=v7.1.1"
+  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git//bootstrap?ref=v7.2.0"
 
   argocd_projects = {
     "${module.sks.cluster_name}" = {
@@ -140,7 +140,7 @@ module "longhorn" {
 }
 
 module "loki-stack" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//sks?ref=v10.0.0"
+  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//sks?ref=v11.0.0"
 
   argocd_project = module.sks.cluster_name
 
@@ -235,7 +235,7 @@ module "kube-prometheus-stack" {
 }
 
 module "argocd" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git?ref=v7.1.1"
+  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git?ref=v7.2.0"
 
   cluster_name   = module.sks.cluster_name
   base_domain    = module.sks.base_domain

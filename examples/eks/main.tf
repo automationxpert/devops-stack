@@ -75,7 +75,7 @@ module "oidc" {
 }
 
 module "argocd_bootstrap" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git//bootstrap?ref=v7.1.1"
+  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git//bootstrap?ref=v7.2.0"
 
   argocd_projects = {
     "${module.eks.cluster_name}" = {
@@ -131,7 +131,7 @@ module "cert-manager" {
 }
 
 module "loki-stack" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//eks?ref=v10.0.0"
+  source = "git::https://github.com/camptocamp/devops-stack-module-loki-stack.git//eks?ref=v11.0.0"
 
   argocd_project = module.eks.cluster_name
 
@@ -221,7 +221,7 @@ module "kube-prometheus-stack" {
 }
 
 module "argocd" {
-  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git?ref=v7.1.1"
+  source = "git::https://github.com/camptocamp/devops-stack-module-argocd.git?ref=v7.2.0"
 
   cluster_name   = module.eks.cluster_name
   base_domain    = module.eks.base_domain
